@@ -12,7 +12,7 @@ import br.edu.unis.minhasdisciplinas.dao.DisciplinaDao;
 public class ListaDisciplinasActivity extends AppCompatActivity {
 
     ListView listaDisciplinas;
-    DisciplinaDao dao;
+    DisciplinaDao dao = new DisciplinaDao();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class ListaDisciplinasActivity extends AppCompatActivity {
     }
 
     private void configurarListaDisciplinas() {
-
+        this.dao = new DisciplinaDao();
         ListaDisciplinasAdapter adapter = new ListaDisciplinasAdapter(this);
         adapter.addAll(dao.buscarTodos());
         listaDisciplinas.setAdapter(adapter);
