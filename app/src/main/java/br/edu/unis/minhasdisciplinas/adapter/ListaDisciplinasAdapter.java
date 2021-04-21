@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -32,13 +33,23 @@ public class ListaDisciplinasAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-        return listaDisciplinas.get(position).get;
+        return listaDisciplinas.get(position).getId();
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
         View viewCriada = LayoutInflater.from(this.context).inflate(R.layout.item_disciplina, parent,   false);
+
+        Disciplina disciplina = listaDisciplinas.get(position);
+
+        TextView titulo = viewCriada.findViewById(R.id.item_disciplina_titulo_disciplina);
+        TextView cargaHoraria = viewCriada.findViewById(R.id.item_disciplina_carga_horaria);
+        TextView verEmenta = viewCriada.findViewById(R.id.item_disciplina_ver_ementa);
+
+        titulo.setText(disciplina.getTitulo().toString());
+        cargaHoraria.setText(disciplina.getCargaHoraria() + " horas");
+        verEmenta.setText("ver ementa");
 
         return viewCriada;
     }
