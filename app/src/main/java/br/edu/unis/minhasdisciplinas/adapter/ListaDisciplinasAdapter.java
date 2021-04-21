@@ -13,7 +13,7 @@ import br.edu.unis.minhasdisciplinas.model.Disciplina;
 
 public class ListaDisciplinasAdapter extends BaseAdapter {
 
-    private final ArrayList<Disciplina> disciplina = new ArrayList<>();
+    private final ArrayList<Disciplina> listaDisciplinas = new ArrayList<>();
     private final Context context;
 
     public ListaDisciplinasAdapter(Context context) {
@@ -22,17 +22,17 @@ public class ListaDisciplinasAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 0;
+        return listaDisciplinas.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return listaDisciplinas.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return listaDisciplinas.get(position).get;
     }
 
     @Override
