@@ -28,7 +28,6 @@ public class ListaDisciplinasActivity extends AppCompatActivity {
     }
 
     private void configurarListaDisciplinas() {
-        this.dao = new DisciplinaDao();
         ListaDisciplinasAdapter adapter = new ListaDisciplinasAdapter(this);
         adapter.addAll(dao.buscarTodos());
         listaDisciplinas.setAdapter(adapter);
