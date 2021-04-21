@@ -54,5 +54,9 @@ public class ListaDisciplinasAdapter extends BaseAdapter {
         return viewCriada;
     }
 
+    public void addAll(ArrayList<Disciplina> listaDisciplinas){
+        this.listaDisciplinas.addAll(listaDisciplinas);
+    }
+
 
 }
